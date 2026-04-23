@@ -372,6 +372,10 @@ mixin RawEditorStateTextInputClientMixin on EditorState
     // an exception
   }
 
+  // Required by TextInputClient in Flutter 3.19.x; removed in later versions,
+  // so no @override to stay compatible across SDKs.
+  bool onFocusReceived() => false;
+
   @override
   void connectionClosed() {
     if (!hasConnection) {
